@@ -1,0 +1,38 @@
+div.app>header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: magenta;
+    position: fixed;
+    color: white;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.app>header>h1>a {
+    text-decoration: none;
+    color: white;
+}
+
+span {
+    align-self: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    height: auto;
+}
+
+main {
+    margin-top: 68px;
+}

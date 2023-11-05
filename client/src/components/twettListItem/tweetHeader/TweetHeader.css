@@ -1,0 +1,17 @@
+.tweet-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: magenta;
+}
+
+.tweet-header p {
+    font-size: 24px;
+    color: rgb(234, 234, 238);
+}
+
+.tweet-header time {
+    font-size: 24px;
+    color: magenta;
+}

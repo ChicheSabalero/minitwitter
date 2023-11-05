@@ -1,0 +1,7 @@
+div.app>footer {
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: magenta;
+    color: white;
+    width: 100%;
+}

@@ -1,0 +1,8 @@
+ul {
+    list-style: none;
+    overflow-anchor: none;
+}
+
+.no-tweet {
+    text-align: center;
+}
