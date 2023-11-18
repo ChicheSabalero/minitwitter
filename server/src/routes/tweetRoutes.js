@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const { authUserController, authUserOptionalController, tweetExistsController } = require('../middlewares')
-const { newTweetController, newLikeController, deleteLikeController, deleteTweetController, newDislikeController, deleteDislikeController } = require('../controllers/tweets');
-const listTweetsController = require('../controllers/tweets/listTweetsController')
+const { newTweetController, newLikeController, deleteLikeController, deleteTweetController, newDislikeController, deleteDislikeController, listTweetsController } = require('../controllers/tweets');
 
 router.post('/tweets', authUserController, newTweetController)
 
@@ -17,6 +16,5 @@ router.delete('/tweets/:tweetId/dislikes', authUserController, tweetExistsContro
 router.get('/tweets', authUserOptionalController, listTweetsController)
 
 router.delete('/tweets/:tweetId', authUserController, tweetExistsController, deleteTweetController)
-
 
 module.exports = router

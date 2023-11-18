@@ -2,7 +2,6 @@ const getDb = require('../../db/getDb');
 const { unauthorizedUserError } = require('../../services/errorService');
 
 const deleteTweetModel = async (tweetId, userId) => {
-    console.log('Desde el model de delete', tweetId, userId);
     let connection;
     try {
         connection = await getDb();

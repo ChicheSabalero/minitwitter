@@ -58,7 +58,7 @@ const TweetFooter = ({
   };
 
   const handleDeleteTweet = async () => {
-    if (confirm('¿Deseas eliminar el tweet?')) {
+    if (confirm('Delete tweet?')) {
       try {
         setLoading(true);
 
@@ -89,13 +89,15 @@ const TweetFooter = ({
           }}
         >
           <img className='heart' src={heartAnimation} alt='Heart Animation' />
+          <p> {likes} Likes</p>
         </div>
-        <p> {likes} Likes</p>
 
         <div
           className={`dislike ${dislikedByMe && 'dislike'}`}
           onClick={() => {
-            authUser && !loading && handleDisLikeTweet();
+            if (authUser && !loading) {
+              handleDisLikeTweet();
+            }
           }}
         >
           <img className='heart' src={heartAnimation} alt='Heart Animation' />

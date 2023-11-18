@@ -1,3 +1,51 @@
+.main {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Tres columnas con la del medio flexible */
+    gap: 20px;
+    /* Espacio entre columnas */
+}
+
+.column1 {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    /* Divide en 5 filas */
+    /* Estilos para la primera columna (grid) */
+}
+
+.column2 {
+    display: flex;
+    overflow-y: scroll;
+    /* Para el scroll infinito estilo Twitter */
+    /* Estilos para la segunda columna (flex) */
+}
+
+.colum3 {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    /* Divide en 5 filas */
+    /* Estilos para la tercera columna (grid) */
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* Una sola columna en pantallas pequeñas */
+    }
+
+    .column1,
+    .column3 {
+        display: none;
+        /* Oculta las columnas laterales */
+    }
+
+    .column2 {
+        /* Estilos para la columna central en pantallas pequeñas */
+    }
+}
+
+
 ul {
     list-style: none;
     overflow-anchor: none;

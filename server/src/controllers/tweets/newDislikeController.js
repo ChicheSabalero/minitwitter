@@ -8,7 +8,7 @@ const newDislikeController = async (req, res, next) => {
 
         res.send({
             status: 'ok',
-            message: 'Dislike agregado',
+            message: 'Dislike added',
         });
     } catch (err) {
         next(err);

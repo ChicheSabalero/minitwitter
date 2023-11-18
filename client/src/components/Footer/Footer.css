@@ -1,7 +1,20 @@
+/* Estilos base del pie de página que aplican a todas las pantallas */
 div.app>footer {
+    height: 3rem;
+    justify-items: center;
     text-align: center;
     letter-spacing: 1px;
     background-color: magenta;
     color: white;
     width: 100%;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+/* Estilos adicionales para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    div.app>footer {
+        font-size: 14px;
+        /* Reducir el tamaño de fuente en pantallas pequeñas */
+    }
 }

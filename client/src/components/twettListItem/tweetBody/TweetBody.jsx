@@ -7,7 +7,7 @@ const baseURL = import.meta.env.VITE_API_URL;
 const TweetBody = ({ text, image }) => {
   return (
     <div className='tweet-body'>
-      <p>* {text}</p>
+      <p>° {text}</p>
       {image && <img src={`${baseURL}/${image}`} alt='tweet image' />}
     </div>
   );

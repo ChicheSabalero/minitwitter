@@ -11,34 +11,38 @@ const TweetSearchPage = () => {
     useTweets();
   return (
     <main>
-      {<h1>New Tweet</h1>}
-      <TweetCreatePage />
-      {loading && <p>Loading...</p>}
-      {tweets && (
-        <>
-          <h2>Tweets List</h2>
-          <ul className='tweets-list'>
-            {tweets?.length > 0 ? (
-              tweets.map((tweet) => {
-                return (
-                  <TweetListItem
-                    key={tweet.id}
-                    authUser={authUser}
-                    tweet={tweet}
-                    likeTweetById={likeTweetById}
-                    dislikeTweetById={dislikeTweetById}
-                    deleteTweetById={deleteTweetById}
-                  />
-                );
-              })
-            ) : (
-              <li className='no-tweets'>
-                <p>Tweets not found</p>
-              </li>
-            )}
-          </ul>
-        </>
-      )}
+      <section className='new-tweet'>
+        {<h1>New Tweet</h1>}
+        <TweetCreatePage />
+      </section>
+      <section className='tweets-list'>
+        {loading && <p>Loading...</p>}
+        {tweets && (
+          <>
+            <h2>Tweets List</h2>
+            <ul>
+              {tweets?.length > 0 ? (
+                tweets.map((tweet) => {
+                  return (
+                    <TweetListItem
+                      key={tweet.id}
+                      authUser={authUser}
+                      tweet={tweet}
+                      likeTweetById={likeTweetById}
+                      dislikeTweetById={dislikeTweetById}
+                      deleteTweetById={deleteTweetById}
+                    />
+                  );
+                })
+              ) : (
+                <li className='no-tweets'>
+                  <p>Tweets not found</p>
+                </li>
+              )}
+            </ul>
+          </>
+        )}
+      </section>
     </main>
   );
 };

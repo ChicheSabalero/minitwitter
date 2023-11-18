@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { listTweetService } from '../services/tweetService';
+import { listTweetService, likeTweetService, dislikeTweetService } from '../services/tweetService';
 
 export const useTweets = () => {
 
@@ -16,7 +16,6 @@ export const useTweets = () => {
                 const body = await listTweetService(searchParams);
 
                 setTweets(body.data.tweets);
-                console.log("setLoadingtrue", body.data.tweets);
             } catch (err) {
                 alert(err.message);
             } finally {
@@ -27,7 +26,8 @@ export const useTweets = () => {
         fetchTweets();
     }, [searchParams]);
 
-    const likeTweetById = (tweetId) => {
+    const likeTweetById = async (tweetId,) => {
+        // await likeTweetService(tweetId, method);
         const newTweets = tweets.map((tweet) => {
             if (tweet.id === tweetId) {
                 const likedByMe = !tweet.likedByMe;
@@ -47,11 +47,13 @@ export const useTweets = () => {
         setTweets(newTweets);
     };
 
-    const dislikeTweetById = (tweetId) => {
+    const dislikeTweetById = async (tweetId,) => {
+        // await dislikeTweetService(tweetId, method);
         const newTweets = tweets.map((tweet) => {
             if (tweet.id === tweetId) {
                 const dislikedByMe = !tweet.dislikedByMe;
 
+                console.log("fetch");
                 const dislikes = dislikedByMe ? tweet.dislikes + 1 : tweet.dislikes - 1;
 
                 return {

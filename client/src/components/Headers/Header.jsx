@@ -25,7 +25,7 @@ const Header = () => {
         <TweetSearchForm setSearchParams={setSearchParams} loading={loading} />
       </section>
       <nav>
-        {authUser && <span>@ {authUser.username}</span>}
+        {authUser && <span>@{authUser.username}</span>}
 
         {!authUser && (
           <>

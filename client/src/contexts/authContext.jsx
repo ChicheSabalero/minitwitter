@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
 
       if (password !== confirmPassword) {
-        throw new Error('Las contraseñas no coinciden');
+        throw new Error(`Password don't Match`);
       }
 
       const body = await signUpService(username, email, password);
